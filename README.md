@@ -1,4 +1,11 @@
 # Streetview-Fibre-pole-detection-
+### Team Member
+- Odiodio Osigbemhe Oshiozekhai - Team Lead 
+- Michael Nthome Kihara - Admistrative lead
+- Humphery Osas Ojo- Tech Lead
+- Basheer Ashafa - Assistant Tech Lead
+- Godwin Efugha Chibuikem -  Assistant Team Lead
+
 # Summary
 This project was focused on utilizing deep learning algorithm to automatically detect fibre pole and its location in images gotten from google streetview  app. This approached was aimed at reducing the cost, time and labor involved in manually mapping utility poles for deploying 5g equipment.
 ### Brief Overview
@@ -19,7 +26,8 @@ From the above images, our model can  attain a precision of 1.00 at a confidence
 Our solution utilizes street view images obtained via  google Application Programming Interface (API). Two methods are adopted for street sampling- the first method utilizes a function that accepts a single address or multiple street addresses  and  downloads the 00, 900, 1800,  and  2700 views of the street or streets to form a complete panoramic view of the street and then parses the images to the algorithm to detect the presence of utility poles on the street. The second method utilizes a function that accepts a region, maps it to a polygon with a set number of  sample points (number of coordinates), and downloads several images at each sampling point (Dwyer, 2022). Depending on the number of sampling points specified, this will give an overall estimate of how many poles 
 are in the selected region. Location coordinates are obtained by utilizing the Python package “Nominatim,” which converts a string of an address to the corresponding coordinates. From our explanation above, the coordinates obtained are then parsed to the function  that downloads images for each coordinate.
 ### Sample Images of Fibre pole detection
-![](images/PR.png)
+<img src="https://github.com/Ashafa1905/Street-Fibre-pole-detection-/blob/main/images/6.jpg" width= "416" height= "416"> <img src="https://github.com/Ashafa1905/Street-Fibre-pole-detection-/blob/main/images/7.jpg" width= "416" height= "416"> \
+The first image(from left to right) is a streetview image depicting a moving car, three fibre poles , two distant light pole and a university gate before object detection while the second image is the same image with which has been inferenced by the model. 
 ## Deployment
 Our team has deployed a user-friendly solution as a web application using Streamlit as the framework. The application is hosted on an AWS EC2 T3 medium instance of 8GB memory to ensure optimal availability. The Street-View images downloaded during detection are sent to the S3 bucket. Whenever an  already detected address is imputed, the images and results are immediately called from the s3 bucket without the need to re-download the images (Dwyer, 2022).\
 ![](images/Picture.png)
